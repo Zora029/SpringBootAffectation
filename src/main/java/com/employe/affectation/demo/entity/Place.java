@@ -1,11 +1,8 @@
 package com.employe.affectation.demo.entity;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,9 +17,6 @@ public class Place {
 
   @Column(name = "province", length = 256, nullable = false)
   private String province;
-
-  @OneToMany(mappedBy = "place")
-  Set<Assigned> assigned;
 
   public Place() {
   }
