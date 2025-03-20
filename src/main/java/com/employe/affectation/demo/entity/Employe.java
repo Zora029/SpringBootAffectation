@@ -2,6 +2,7 @@ package com.employe.affectation.demo.entity;
 
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -24,7 +25,7 @@ public class Employe {
   @Column(name = "job", length = 256, nullable = false)
   private String job;
 
-  @OneToMany(mappedBy = "employe")
+  @OneToMany(mappedBy = "employe", cascade = CascadeType.ALL, orphanRemoval = true)
   Set<Assigned> assigned;
 
   public Employe() {
